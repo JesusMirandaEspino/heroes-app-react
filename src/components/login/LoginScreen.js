@@ -1,10 +1,13 @@
 import React from 'react'
 
-export const LoginScreen = () => {
+export const LoginScreen = ( { history } ) => {
 
     const handleLogin = () => {
 
-        console.log( 'hola' );
+        //  Queda en el historial history.push('/');
+
+        history.replace('/');
+
 
     }
 
