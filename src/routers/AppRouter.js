@@ -4,6 +4,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import  { DashboardRoutes } from './DashboardRoutes';
 
 
 // Detenida import { NavBar } from '../components/ui/NavBar';
@@ -14,11 +15,9 @@ export const AppRouter = () => {
     return (
     <Router>
         <div>
-          {   /*   < NavBar  /> */ }
-
             <Switch>
                 <Route  exact path="/login" component={ LoginScreen } />
-                <Route  exact path="/" component={  } />
+                <Route  path="/" component={  DashboardRoutes  }   />
             </Switch>
         </div>
 
