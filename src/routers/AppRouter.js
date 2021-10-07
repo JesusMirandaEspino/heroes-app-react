@@ -14,7 +14,7 @@ import { LoginScreen } from '../components/login/LoginScreen';
 export const AppRouter = () => {
     return (
     <Router>
-        <div>
+        <div  >
             <Switch>
                 <Route  exact path="/login" component={ LoginScreen } />
                 <Route  path="/" component={  DashboardRoutes  }   />
