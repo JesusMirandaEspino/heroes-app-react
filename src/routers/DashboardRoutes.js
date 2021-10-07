@@ -12,7 +12,7 @@ export const DashboardRoutes = () => {
             <NavBar />
 
 
-            <div>
+            <div className="container mt-5" >
 
                 <Switch>
 
