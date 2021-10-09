@@ -1,6 +1,6 @@
 import { heroes } from '../data/heroes';
 
-export const GetHeroesByPublisher = ( id ) => {
+export const GetHeroesById = ( id ) => {
 
     return heroes.find( hero => hero.id === id );
 
