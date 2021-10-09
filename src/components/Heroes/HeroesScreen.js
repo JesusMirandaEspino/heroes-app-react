@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Redirect  } from 'react-router-dom';
 import {GetHeroesById } from '../../selectors/GetHeroesById';
 
 
 export const HeroesScreen = ( { history } ) => {
 
-
-
     const { heroeid } = useParams();
 
-    const hero = GetHeroesById( heroeid );
+    const hero = useMemo(() => GetHeroesById( heroeid ) , [heroeid ] );
 
     console.log( hero );
 
