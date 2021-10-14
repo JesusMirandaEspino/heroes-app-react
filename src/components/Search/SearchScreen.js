@@ -5,14 +5,13 @@ import { HeroesCard } from '../Heroes/HeroesCard';
 import { UseForm } from '../../hooks/UseForm';
 import { useLocation } from 'react-router-dom';
 import { getHeroesByName } from '../../selectors/getHeroesByName';
- 
+
 export const SearchScreen = ( { history } ) => {
 
-    const location = useLocation(); 
-    
+    const location = useLocation();
+
     const { q = '' } =  queryString.parse( location.search );
 
-    
     const [  setValues, handleInpuntChange ] = UseForm( {
         searchText: q
     } );
