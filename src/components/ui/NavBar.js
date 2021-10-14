@@ -1,7 +1,12 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, NavLink } from 'react-router-dom';
+import { authContext } from '../../auth/authContext';
 
 export const NavBar = () => {
+
+    const  { user: { name } } =  useContext( authContext );
+
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 
@@ -48,6 +53,9 @@ export const NavBar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
+
+                    <p className="nav-item nav-link text-info"> { name } </p>
+
                     <NavLink 
                         activeClassName="active"
                         className="nav-item nav-link" 
