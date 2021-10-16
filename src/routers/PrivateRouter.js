@@ -7,6 +7,9 @@ export const PrivateRouter = ( {
     component: Component,
     ...rest
 } ) => {
+
+    localStorage.setItem( 'lastPath',  rest.location.pathname );
+
     return (
         <Route  { ...rest }
         component={ (props) => (
@@ -21,5 +24,5 @@ export const PrivateRouter = ( {
 PrivateRouter.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     component: PropTypes.func.isRequired,
-    
+
 }
