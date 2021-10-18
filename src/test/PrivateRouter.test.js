@@ -1,7 +1,7 @@
 import { PrivateRouter } from '../routers/PrivateRouter.js';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 
 describe( 'Pruebas en <PrivateRouter />', () => {
@@ -14,15 +14,17 @@ describe( 'Pruebas en <PrivateRouter />', () => {
 
     test('Debe de mostrar el componente si esta autenticado y guardar localstorage', () => {
 
-            const wrapper = shallow( 
+            const wrapper = mount(
                 <MemoryRouter>
-                    <PrivateRouter isAuthenticated={ true }  component={ () => <span>Hola</span> }  { ...props } /> 
+                    <PrivateRouter isAuthenticated={ true }  component={ () => <span>Hola</span> }  { ...props } />
                 </MemoryRouter>
                 );
 
-        console.log( wrapper.html() );
+    expect( wrapper.find( 'span' ).exists() ).toBe( true );
+
+
 
     });
 
-
+    
 });
