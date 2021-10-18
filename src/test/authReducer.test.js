@@ -8,7 +8,6 @@ describe('Pruebes con authReducer', () => {
     test('Debe de mostrar el estado por defecto ', () => {
 
         const state = authReducer( { logged: false }, {} );
-
         expect( state ).toEqual( { logged: false} );
 
     });
@@ -25,19 +24,18 @@ describe('Pruebes con authReducer', () => {
         }
 
         const state = authReducer( { logged: false }, action );
-
         expect( state ).toEqual( { logged: true, name:'Jesus'} );
 
 
     });
 
     test('Debe de borrar el name del usuario y el logged en false', () => {
+
         const action = {
             type: types.logout
         }
 
         const state = authReducer( { logged: true, name: 'jesus' }, action );
-
         expect( state ).toEqual( { logged: false } );
 
     });
