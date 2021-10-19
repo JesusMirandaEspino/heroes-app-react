@@ -28,5 +28,21 @@ describe( 'Pruebas en <PrivateRouter />', () => {
 
     });
 
+
+    test(' Debe de bloquear el componente si no esta autenticado ', () => {
+
+            const wrapper = mount(
+                <MemoryRouter>
+                    <PrivateRouter isAuthenticated={ false }  component={ () => <span>Hola</span> }  { ...props } />
+                </MemoryRouter>
+                );
+
+            expect( wrapper.find( 'span' ).exists() ).toBe( false );
+            expect( localStorage.setItem ).toHaveBeenCalledWith( 'lastPath', '/marvel' );
+
+
+    })
+    
+
     
 });
