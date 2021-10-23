@@ -59,6 +59,67 @@ exports[` Pruebas con <SearchScreen />  Debe de mostrarse con los valores por de
 </div>
 `;
 
+exports[` Pruebas con <SearchScreen />  Debe mostrar un error si no encuntran al heroe  1`] = `
+<div>
+  <h1>
+    SearchScreen
+  </h1>
+  <hr />
+  <div
+    className="row"
+  >
+    <div
+      className="col-4"
+    >
+      <h4>
+         SearchForm 
+      </h4>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <label>
+           Find your Hero 
+        </label>
+        <input
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Hero"
+          type="text"
+          value="batman123"
+        />
+        <button
+          className="btn m-1 btn-block btn-outline-primary"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-8"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-danger"
+      >
+        <p
+          className="textdanger"
+        >
+           There is no a Hero 
+          batman123
+           
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[` Pruebas con <SearchScreen />  debe de mostrar a Batman y el input con el valor del QueryString   1`] = `
 <div>
   <h1>

@@ -32,6 +32,49 @@ describe( ' Pruebas con <SearchScreen /> ', () => {
             expect( wrapper ).toMatchSnapshot();
 
     });
+
+
+    test('Debe mostrar un error si no encuntran al heroe ', () => {
+
+        const wrapper = mount(
+            <MemoryRouter initialEntries={ ['/search?q=batman123'] } >
+                <Route path='/search' component={SearchScreen} />
+            </MemoryRouter>
+        );
+
+            expect( wrapper.find('.textdanger').text().trim() ).toBe(`There is no a Hero batman123`);
+            expect( wrapper ).toMatchSnapshot();    
+
+    });
+    
+
+    test('Debe de llamar el PUSH del history ', () => {
+        
+        const history = {
+            push: jest.fn()
+        };
+
+        const wrapper = mount(
+            <MemoryRouter initialEntries={ ['/search?q=batman123'] } >
+                <Route path='/search'  component={ () => <SearchScreen  history={ history } />} />
+            </MemoryRouter>
+        );
+
+        wrapper.find('input').simulate( 'change', {
+            target: {
+                name: 'searchText',
+                value: 'batman'
+            }
+        });
+
+        wrapper.find('form').prop('onSubmit')({
+            preventDefault(){}
+        });
+
+        expect( history.push ).toHaveBeenCalledWith(`?q=batman `);
+
+    });
+    
     
 
 

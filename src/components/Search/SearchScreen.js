@@ -64,7 +64,7 @@ export const SearchScreen = ( { history } ) => {
                     { 
                         ( q !== ''  && heroesFiltered.length === 0 )  && 
                             <div className="alert alert-danger" >
-                                <p> There is no a Hero { q } </p>
+                                <p className="textdanger"> There is no a Hero { q } </p>
                             </div> 
                     }
 
